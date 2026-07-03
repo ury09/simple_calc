@@ -1,0 +1,36 @@
+#simple calculator for basic mathematical  operations
+print(f'======Simple Calculator======')
+operation = [f'1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. power']
+print(f'Operations available:\n{operation[0]}')
+
+try:
+    choice = int(input(f'Enter your choice from the above operations: '))
+    if choice not in [1,2,3,4,5]:
+        raise ValueError("Invalid choice. Please select a valid operation.")
+except ValueError as e:
+    if "invalid literal" in str(e):
+        print("that's not a number — enter digits only")
+    else:
+        print("invalid choice — enter a number between 1 and 5")
+    exit()
+for i in operation:
+    if choice ==1:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        print(f'Addition of {a} and {b} is {a+b}')
+    elif choice ==2:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        print(f'Subtraction of {a} and {b} is {a-b}')
+    elif choice ==3:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        print(f'Multiplication of {a} and {b} is {a*b}')
+    elif choice ==4:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        print(f'Division of {a} and {b} is {a/b}')
+    elif choice ==5:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        print(f'Power of {a} is to {b} is {a**b}')
